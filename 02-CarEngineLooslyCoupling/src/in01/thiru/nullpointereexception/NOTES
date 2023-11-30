@@ -1,0 +1,11 @@
+
+
+=>	We Need to iniaialaoze here otherwise we will get null pointer exception
+
+==> It will take default value
+
+==> WE CAN INITIALAIZE IN TWO WAYS
+
+	1] CONSTRUCTOR
+	
+	2] SETTER METHOD

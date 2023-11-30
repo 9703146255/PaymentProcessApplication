@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="
+        http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <!-- bean definitions here -->
+   <!--we used here byType  that means data type-->
+   <!--if we configure  autowire-candidate="false" than IOC container will not create object for dependent beans -->
+		
+		
+		<bean id="credit" class="in.thiru.CreditCardPayment" autowire-candidate="false" />  
+       <bean id="debit" class="in.thiru.DebitCardPayment" 	autowire-candidate="false"  /> 
+  		<bean id="sodexo" class="in.thiru.SodexoCardPayment" /> 
+ 
+      <bean id="pp" class="in.thiru.PaymentProcessing" autowire="constructor"/> 
+    
+   
+
+</beans>

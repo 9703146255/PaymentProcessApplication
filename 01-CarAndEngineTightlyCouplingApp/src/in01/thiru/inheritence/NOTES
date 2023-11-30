@@ -1,0 +1,32 @@
+/*
+ One class will talk to another class in two ways
+ ================================================
+  1]INHERITANCE [IS A]
+  2]COMPOSITION [HAS A]
+  
+ 
+ 1]INHERITANCE [IS A]
+ ====================
+ 
+ 	1] problem
+ 	----------
+ 	==>If we extends the properties from one class to another class in future we can't extends 
+ 
+ 	becouse java not support multiple inheritence
+ 
+  	2] problem
+  	----------
+  	If we change the one class functionality it will effect another class functionality
+  	
+  	
+ 
+ 2]COMPOSITION [HAS A]
+ ====================
+ 
+ 	1] problem
+ 	-----------
+ 	=>1st problem of is a solved
+ 	
+ 	=>If we have one engine it will work if we add two or more than two engines in the future it will entire we need to change
+ 
+ */

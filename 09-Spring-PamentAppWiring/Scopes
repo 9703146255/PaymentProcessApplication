@@ -1,0 +1,63 @@
+Objects will be created based on scopes
+=======================================
+System.out.println("==============CreditCardPayment========================");
+	CreditCardPayment credit1 = context.getBean(CreditCardPayment.class);
+	CreditCardPayment credit2 = context.getBean(CreditCardPayment.class);
+	CreditCardPayment credit3 = context.getBean(CreditCardPayment.class);
+	
+	System.out.println("CreditCardPayment : "+credit1.hashCode());
+	System.out.println("CreditCardPayment : "+credit1.hashCode());
+	System.out.println("CreditCardPayment : "+credit1.hashCode());
+	
+	System.out.println("=================DebitCardPayment=====================");
+	DebitCardPayment debit1 = context.getBean(DebitCardPayment.class);
+	DebitCardPayment debit2 = context.getBean(DebitCardPayment.class);
+	DebitCardPayment debit3 = context.getBean(DebitCardPayment.class);
+	
+	System.out.println("DebitCardPayment : "+debit1.hashCode());
+	System.out.println("DebitCardPayment : "+debit2.hashCode());
+	System.out.println("DebitCardPayment : "+debit3.hashCode());
+
+	System.out.println("=============SodexoCardPayment========================");
+	SodexoCardPayment sodexo1 = context.getBean(SodexoCardPayment.class);
+	SodexoCardPayment sodexo2 = context.getBean(SodexoCardPayment.class);
+	SodexoCardPayment sodexo3 = context.getBean(SodexoCardPayment.class);
+	
+	System.out.println("SodexoCardPayment : "+sodexo1.hashCode());
+	System.out.println("SodexoCardPayment : "+sodexo2.hashCode());
+	System.out.println("SodexoCardPayment : "+sodexo3.hashCode());
+	
+
+
+CreditCardPayment()  :: 0-param constructor
+DebitCardPayment()  :: 0-PARAM CONSTRUCTOR
+SodexoCardPayment() :: 0-Param-constructor
+PaymentProcessing():: 0-args construtor
+crditcard payment is started.....
+payment sucess..
+
+=====================================================
+By default it will follow the singletone
+==============CreditCardPayment========================
+CreditCardPayment : 1750498848
+CreditCardPayment : 1750498848
+CreditCardPayment : 1750498848
+=================DebitCardPayment=====================
+DebitCardPayment : 1995250556
+DebitCardPayment : 1995250556
+DebitCardPayment : 1995250556
+=============SodexoCardPayment========================
+SodexoCardPayment : 301749835
+SodexoCardPayment : 301749835
+SodexoCardPayment : 301749835
+=====================================================
+
+
+
+======================
+Modes of Autowiring
+======================
+byName[required setter]
+ByType[required setter]
+Constructor[required Constructor]
+no

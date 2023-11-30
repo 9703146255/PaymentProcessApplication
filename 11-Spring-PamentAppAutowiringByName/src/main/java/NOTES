@@ -1,0 +1,16 @@
+ <!--we used here byName  pay is the IPayment interface refarence name variable -->
+     <bean id="credit" class="in.thiru.CreditCardPayment"  /> 
+     
+     
+     <bean id="pay" class="in.thiru.DebitCardPayment"  /> 
+     
+     <!-- these will follow setter injection and it will take [id]  of dependent class-->
+     <bean id="pp" class="in.thiru.PaymentProcessing" autowire="byName" /> 
+     
+     
+     private IPayment pay;
+     ====================
+     
+     INSIDE BEANS WE WILL MENTION "pay" variable  as id value then it will identify dependent objects
+     
+     ==> if i mention inside credit card bean as id="pay" it will inject into target object

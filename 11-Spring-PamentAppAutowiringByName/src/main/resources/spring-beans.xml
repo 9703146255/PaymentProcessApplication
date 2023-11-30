@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="
+        http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <!-- bean definitions here -->
+    
+   <!--we used here byName  pay is the IPayment interface refarence name variable -->
+     <bean id="credit" class="in.thiru.CreditCardPayment"  /> 
+     
+     
+     <bean id="debit" class="in.thiru.DebitCardPayment"  /> 
+     
+      <bean id="pay" class="in.thiru.SodexoCardPayment"  /> 
+     
+     <!-- these will follow setter injection and it will take [id]  of dependent class-->
+     <bean id="pp" class="in.thiru.PaymentProcessing" autowire="byName" /> 
+    
+    
+
+</beans>

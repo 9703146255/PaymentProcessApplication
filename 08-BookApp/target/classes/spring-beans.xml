@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:context="http://www.springframework.org/schema/context"
+    xmlns:jdbc="http://www.springframework.org/schema/jdbc"
+    xsi:schemaLocation="http://www.springframework.org/schema/beans
+                        http://www.springframework.org/schema/beans/spring-beans.xsd
+                        http://www.springframework.org/schema/context
+                        http://www.springframework.org/schema/context/spring-context.xsd
+                        http://www.springframework.org/schema/jdbc
+                        http://www.springframework.org/schema/jdbc/spring-jdbc.xsd">
+
+    <!-- Enable component scanning to automatically discover and register beans -->
+    <context:component-scan base-package="in.ashokit" />
+
+    <!-- Define the data source bean -->
+    <bean id="dataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
+        <property name="driverClassName" value="com.mysql.cj.jdbc.Driver" />
+        <property name="url" value="jdbc:mysql://localhost:3306/springdb" />
+        <property name="username" value="root" />
+        <property name="password" value="123456" />
+    </bean>
+
+    <!-- Define the JdbcTemplate bean [Jdbc template injected into dataSource -->
+    <bean id="jdbcTemplate" class="org.springframework.jdbc.core.JdbcTemplate">
+        <property name="dataSource" ref="dataSource" />
+    </bean>
+
+    <!-- Define the BookDao bean   inside BookDaoImpl we can injected jdbcTemplate -->
+    <bean id="bookDao" class="in.ashokit.dao.impl.BookDaoImpl">
+        <constructor-arg ref="jdbcTemplate" />
+    </bean>
+
+    <!-- Define the BookService bean inside BookServiceImpl we injected bookDao  -->
+    <bean id="bookService" class="in.ashokit.service.impl.BookServiceImpl">
+        <constructor-arg ref="bookDao" />
+    </bean>
+
+</beans>
